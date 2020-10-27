@@ -1,18 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <h1>Welcome to Minescape Tools!</h1>
+    <p>
+      This site holds a collection of utils I've created to help with various
+      aspects of
+      <a class="link" href="https://minescape.net"
+        >Minescape (https://minescape.net)</a
+      >. Currently, it only holds a solver for light box puzzles.
+    </p>
+    <p>
+      In the future, I hope to add some skill calculators, as well as other
+      useful tools.
+    </p>
+    <p>
+      If you find any issues or have any suggestions, please feel free to
+      contact me on Discord (BinaryFissionGames#6410).
+    </p>
   </div>
 </template>
-
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 
-@Component({
-  components: {
-    HelloWorld
-  }
-})
+@Component
 export default class Home extends Vue {}
 </script>
