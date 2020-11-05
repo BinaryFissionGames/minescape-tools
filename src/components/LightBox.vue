@@ -1,6 +1,6 @@
 <template>
   <div class="full-display">
-    <div class="full-table-div">
+    <div class="full-table-div blue-grey darken-2">
       <table class="light-box-table" draggable="false">
         <tr
           v-for="row in 6"
@@ -45,11 +45,11 @@
         </button>
       </div>
     </div>
-    <div class="instruction-display">
+    <div class="instruction-display blue-grey darken-2">
       <p>{{ currentStepDisplayText }}</p>
     </div>
-    <div>
-      <h3>Instructions:</h3>
+    <div class="light-box-instructions blue-grey darken-2">
+      <h2 class="light-box-instructions-header">Instructions</h2>
       <p>
         To toggle a light, click on it. Click and drag to toggle multiple lights
         at once.
@@ -87,7 +87,6 @@ import {
 } from "@/store/mutations";
 import { STEP_INFO } from "@/logic/lightbox/state_info";
 import { LightBoxStep } from "@/types/state";
-import { areArraysEqual, getFilled2DArray } from "@/logic/util/arrays";
 
 @Component({
   components: { LightBoxLight }
@@ -160,11 +159,12 @@ export default class LightBox extends Vue {
 
 <style scoped>
 .instruction-display {
-  margin: 0;
-  padding: 10px 0 0 30px;
+  padding: 10px 20px 0 20px;
   width: 400px;
   box-sizing: border-box;
   font-size: 30px;
+  border-radius: 25px;
+  margin: 25px;
 }
 
 .light-box-table > tr > td {
@@ -220,5 +220,24 @@ export default class LightBox extends Vue {
   border-bottom-right-radius: 25%;
   border-top-right-radius: 25%;
   border-right-style: solid;
+}
+
+.full-table-div {
+  padding: 25px;
+  border-radius: 25px;
+  margin: 25px;
+}
+
+.light-box-instructions-header {
+  margin-bottom: 40px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.light-box-instructions {
+  border-radius: 25px;
+  margin: 25px;
+  padding: 35px;
+  text-align: justify;
 }
 </style>

@@ -15,6 +15,11 @@
               >Light Box Solver</router-link
             >
           </li>
+          <li class="hover-highlight slideout-element">
+            <router-link class="slide-out-indent-2" to="/anagramsolver"
+              >Cipher/Anagram Solver</router-link
+            >
+          </li>
         </ul>
       </li>
       <li class="hover-highlight slideout-element">
@@ -213,6 +218,6 @@ body {
 }
 
 .link {
-  color: #4db6ac;
+  color: #26a69a;
 }
 </style>

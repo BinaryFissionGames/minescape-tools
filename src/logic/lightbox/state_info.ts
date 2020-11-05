@@ -13,6 +13,7 @@ export type StepInfo = {
 
 export const STEP_INFO: StepInfo = {
   [LightBoxStep.Initial]: {
+    // eslint-disable-next-line
     getDisplayText(_state: VuexState): string {
       return "Enter the initial light box state!";
     },
@@ -21,6 +22,7 @@ export const STEP_INFO: StepInfo = {
     prevStep: null
   },
   [LightBoxStep.EnterA]: {
+    // eslint-disable-next-line
     getDisplayText(_state: VuexState): string {
       return 'Press "A" on your light box, then enter the new state of the light box.';
     },
@@ -29,6 +31,7 @@ export const STEP_INFO: StepInfo = {
     prevStep: LightBoxStep.Initial
   },
   [LightBoxStep.EnterB]: {
+    // eslint-disable-next-line
     getDisplayText(_state: VuexState): string {
       return 'Press "B" on your light box, then enter the new state of the light box.';
     },
@@ -37,6 +40,7 @@ export const STEP_INFO: StepInfo = {
     prevStep: LightBoxStep.EnterA
   },
   [LightBoxStep.EnterC]: {
+    // eslint-disable-next-line
     getDisplayText(_state: VuexState): string {
       return 'Press "C" on your light box, then enter the new state of the light box.';
     },
@@ -45,6 +49,7 @@ export const STEP_INFO: StepInfo = {
     prevStep: LightBoxStep.EnterB
   },
   [LightBoxStep.EnterD]: {
+    // eslint-disable-next-line
     getDisplayText(_state: VuexState): string {
       return 'Press "D" on your light box, then enter the new state of the light box.';
     },
@@ -53,6 +58,7 @@ export const STEP_INFO: StepInfo = {
     prevStep: LightBoxStep.EnterC
   },
   [LightBoxStep.EnterE]: {
+    // eslint-disable-next-line
     getDisplayText(_state: VuexState): string {
       return 'Press "E" on your light box, then enter the new state of the light box.';
     },
@@ -61,6 +67,7 @@ export const STEP_INFO: StepInfo = {
     prevStep: LightBoxStep.EnterD
   },
   [LightBoxStep.EnterF]: {
+    // eslint-disable-next-line
     getDisplayText(_state: VuexState): string {
       return 'Press "F" on your light box, then enter the new state of the light box.';
     },
@@ -69,6 +76,7 @@ export const STEP_INFO: StepInfo = {
     prevStep: LightBoxStep.EnterE
   },
   [LightBoxStep.EnterG]: {
+    // eslint-disable-next-line
     getDisplayText(_state: VuexState): string {
       return 'Press "G" on your light box, then enter the new state of the light box.';
     },
@@ -77,6 +85,7 @@ export const STEP_INFO: StepInfo = {
     prevStep: LightBoxStep.EnterF
   },
   [LightBoxStep.EnterH]: {
+    // eslint-disable-next-line
     getDisplayText(_state: VuexState): string {
       return 'Press "H" on your light box, then enter the new state of the light box.';
     },
@@ -103,6 +112,7 @@ export const STEP_INFO: StepInfo = {
     prevStep: LightBoxStep.EnterH
   },
   [LightBoxStep.InstructReenter]: {
+    // eslint-disable-next-line
     getDisplayText(_state: VuexState): string {
       return "Flip ALL switches (A-H), then verify the lights states.";
     },

@@ -30,6 +30,5 @@ document.addEventListener("mouseup", e => {
 });
 
 document.addEventListener("keydown", e => {
-  console.log("Keydown: " + e.key);
   processKeyEvent(e);
 });

@@ -15,6 +15,14 @@ const routes: Array<RouteConfig> = [
     name: "Light Box Solver",
     component: () =>
       import(/* webpackChunkName: "lightbox" */ "../views/LightBoxSolver.vue")
+  },
+  {
+    path: "/anagramsolver",
+    name: "Anagram Solver",
+    component: () =>
+      import(
+        /* webpackChunkName: "anagram" */ "../views/AnagramCipherSolver.vue"
+      )
   }
 ];
 
