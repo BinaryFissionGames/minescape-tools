@@ -24,8 +24,7 @@ export default class AnagramCipherSolver extends Vue {}
   flex-wrap: wrap;
 }
 .anagram-element {
-  min-width: 350px;
-  max-width: 500px;
+  width: 450px;
   height: 300px;
   padding: 15px 50px 15px 50px;
   border-radius: 15px;

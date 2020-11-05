@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h3>Anagram Solver:</h3>
-    <input v-model="anagramText" placeholder="enter anagram" />
+    <h3>Anagram Solver</h3>
+    <input v-model="anagramText" placeholder="enter anagram text" />
     <p
       class="solution-output"
       v-if="!!anagramSolution"

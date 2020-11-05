@@ -334,42 +334,38 @@ export const PEOPLE_OF_INTEREST: PersonOfInterest[] = [
     locationDesc: "near the southern entrance to Varrock"
   },
   {
-    // TODO: Coords
     name: "Dunstan",
     location: {
-      x: 0,
-      y: 0,
-      z: 0
+      x: -1403,
+      y: 79,
+      z: 1073
     },
     locationDesc: "in a building in north-eastern Burthorpe"
   },
   {
-    // TODO: Coords
     name: "Ranael",
     location: {
-      x: 0,
-      y: 0,
-      z: 0
+      x: -156,
+      y: 74,
+      z: -131
     },
-    locationDesc: "in the skirt shop in southeastern Al-Kharid"
+    locationDesc: "in the chain-body shop in southeastern Al-Kharid"
   },
   {
-    // TODO: Coords
     name: "Professor Onglewip",
     location: {
-      x: 0,
-      y: 0,
-      z: 0
+      x: -169,
+      y: 85,
+      z: 505
     },
     locationDesc: "in the wizard tower"
   },
   {
-    // TODO: Coords
     name: "Sedridor",
     location: {
-      x: 0,
-      y: 0,
-      z: 0
+      x: -147,
+      y: 85,
+      z: 502
     },
     locationDesc: "in the wizard tower"
   }

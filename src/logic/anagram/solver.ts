@@ -40,10 +40,14 @@ export function solveAnagram(anagramText: string): PersonOfInterest | null {
 function rotateText(text: string, shiftAmount: number) {
   let shiftedText = "";
   for (const char of text) {
-    const shiftedCharCode = char.charCodeAt(0) + shiftAmount;
-    const wrappedCharCode =
-      ((shiftedCharCode - "a".charCodeAt(0)) % 26) + "a".charCodeAt(0);
-    shiftedText += String.fromCharCode(wrappedCharCode);
+    if (letterPattern.test(char)) {
+      const shiftedCharCode = char.charCodeAt(0) + shiftAmount;
+      const wrappedCharCode =
+        ((shiftedCharCode - "a".charCodeAt(0)) % 26) + "a".charCodeAt(0);
+      shiftedText += String.fromCharCode(wrappedCharCode);
+    } else {
+      shiftedText += char;
+    }
   }
   return shiftedText;
 }
@@ -51,9 +55,10 @@ function rotateText(text: string, shiftAmount: number) {
 export function solveCipher(cipherText: string): PersonOfInterest | null {
   const possiblePeople = [];
   cipherText = transformTextForAnagram(cipherText);
-
+  console.log("Input cipher text: " + cipherText);
   for (let i = 1; i <= 26; i++) {
     const rotatedText = rotateText(cipherText, i);
+    console.log("Rotation: " + rotatedText);
     for (const poi of PEOPLE_OF_INTEREST) {
       const formattedText = transformTextForAnagram(poi.name);
       if (formattedText.startsWith(rotatedText)) {

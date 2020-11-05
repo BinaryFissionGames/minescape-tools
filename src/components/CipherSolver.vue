@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Cipher Solver:</h3>
+    <h3>Cipher Solver</h3>
     <input v-model="cipherText" placeholder="enter cipher text" />
     <p
       v-if="!!cipherSolution"
