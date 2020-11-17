@@ -119,7 +119,7 @@ export default class LightBox extends Vue {
       this.$store.state.lightBoxState.keyboardEntryInfo.inEntryMode &&
       this.$store.state.lightBoxState.keyboardEntryInfo.curRow == row
     ) {
-      return "selected-row";
+      return "dynamic-selected-row";
     } else {
       return "";
     }
@@ -200,7 +200,7 @@ export default class LightBox extends Vue {
   justify-content: space-between;
 }
 
-.selected-row td {
+.dynamic-selected-row td {
   border-top-style: solid;
   border-bottom-style: solid;
   border-left-style: none;
@@ -210,13 +210,13 @@ export default class LightBox extends Vue {
   border-radius: 0;
 }
 
-.selected-row > :first-child {
+.dynamic-selected-row > :first-child {
   border-top-left-radius: 25%;
   border-bottom-left-radius: 25%;
   border-left-style: solid;
 }
 
-.selected-row > :last-child {
+.dynamic-selected-row > :last-child {
   border-bottom-right-radius: 25%;
   border-top-right-radius: 25%;
   border-right-style: solid;

@@ -103,6 +103,7 @@ export const STEP_INFO: StepInfo = {
           "."
         );
       } catch (e) {
+        // eslint-disable-next-line no-console
         console.log(e);
         return "Couldn't solve the puzzle; Maybe you entered it wrong? (press Verify to check your previous entries)";
       }

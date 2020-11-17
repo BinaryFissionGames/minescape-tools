@@ -58,22 +58,22 @@ export default class App extends Vue {
   }
 
   get slideoutClass() {
-    let cssClass = "slide-out-transition blue-grey darken-3";
+    let cssClass = "dynamic-slide-out-transition blue-grey darken-3";
     if (this.slideOutOpen) {
-      cssClass += " slide-out-open";
+      cssClass += " dynamic-slide-out-open";
     } else {
-      cssClass += " slide-out-closed";
+      cssClass += " dynamic-slide-out-closed";
     }
     return cssClass;
   }
 
   get slideoutButtonClass() {
     let cssClass =
-      "btn-floating btn-large waves-light teal left slide-out-transition slide-out-button";
+      "btn-floating btn-large waves-light teal left dynamic-slide-out-transition slide-out-button";
     if (this.slideOutOpen) {
-      cssClass += " slide-out-button-open";
+      cssClass += " dynamic-slide-out-button-open";
     } else {
-      cssClass += " slide-out-button-closed";
+      cssClass += " dynamic-slide-out-button-closed";
     }
     return cssClass;
   }
@@ -109,23 +109,23 @@ body {
   top: 60px;
 }
 
-.slide-out-closed {
+.dynamic-slide-out-closed {
   transform: translateX(-105%);
 }
 
-.slide-out-open {
+.dynamic-slide-out-open {
   transform: translateX(0);
 }
 
-.slide-out-button-open {
+.dynamic-slide-out-button-open {
   transform: translateX(300px);
 }
 
-.slide-out-button-closed {
+.dynamic-slide-out-button-closed {
   transform: translateX(0);
 }
 
-.slide-out-transition {
+.dynamic-slide-out-transition {
   transition: transform 0.5s ease-out !important;
 }
 

@@ -368,5 +368,14 @@ export const PEOPLE_OF_INTEREST: PersonOfInterest[] = [
       z: 502
     },
     locationDesc: "in the wizard tower"
+  },
+  {
+    name: "Lalli",
+    location: {
+      x: -1578,
+      y: 75,
+      z: 1586
+    },
+    locationDesc: "in a cave guarding the golden tree east of Relekka"
   }
 ];

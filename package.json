@@ -20,6 +20,8 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "@fullhuman/vue-cli-plugin-purgecss": "~3.0.1",
     "@types/chai": "^4.2.11",
     "@types/materialize-css": "^1.0.8",
     "@types/mocha": "^5.2.4",

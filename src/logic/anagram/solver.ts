@@ -55,10 +55,8 @@ function rotateText(text: string, shiftAmount: number) {
 export function solveCipher(cipherText: string): PersonOfInterest | null {
   const possiblePeople = [];
   cipherText = transformTextForAnagram(cipherText);
-  console.log("Input cipher text: " + cipherText);
   for (let i = 1; i <= 26; i++) {
     const rotatedText = rotateText(cipherText, i);
-    console.log("Rotation: " + rotatedText);
     for (const poi of PEOPLE_OF_INTEREST) {
       const formattedText = transformTextForAnagram(poi.name);
       if (formattedText.startsWith(rotatedText)) {
