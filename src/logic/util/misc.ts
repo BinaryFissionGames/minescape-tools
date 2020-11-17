@@ -35,3 +35,8 @@ export function getMapLinkForLocation(loc: {
 }) {
   return `https://map.minescape.net/#/${loc.x}/${loc.y}/${loc.z}/max/Minescape/Minescape`;
 }
+
+//Rand int on range [min, max)
+export function randIntRange(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
