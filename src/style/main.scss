@@ -1,0 +1,72 @@
+/*
+* Light theme
+*/
+:root {
+  --shadow-color: #5f5f5f;
+  --border-color: #afafaf;
+  --background-color: #dfdfdf;
+  --background-color-heighten-1: #ffffff;
+  --background-color-heighten-2: #dfdfdf;
+  --background-color-heighten-3: #cfcfcf;
+  --highlight-color: #26a69a;
+  --text-color: #000000;
+}
+
+/*
+* Dark theme
+*/
+@media (prefers-color-scheme: dark){
+  :root {
+    --shadow-color: #1c1c1c;
+    --border-color: #1c1c1c;
+    --background-color: #1c1c1c;
+    --background-color-heighten-1: #2d2d2d;
+    --background-color-heighten-2: #3a3a3a;
+    --background-color-heighten-3: #4a4a4a;
+    --highlight-color: #00796b;
+    --text-color: #bfbfbf;
+  }
+}
+
+html,
+body {
+  min-height: 1vh;
+  min-width: 1vw;
+  background-color: var(--background-color);
+}
+
+p,
+h1, h2, h3, h4, h5,
+a,
+li,
+input,
+span {
+  color: var(--text-color);
+}
+
+.content-container {
+  border-radius: 25px;
+  margin: 50px;
+  padding: 35px;
+  background-color: var(--background-color-heighten-1);
+  box-shadow: 2px 2px 2px 1px var(--shadow-color);
+  border-color: var(--border-color);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.link {
+  color: #26a69a;
+}
+
+.background-lighten-1 {
+  background-color: var(--background-color-heighten-1);
+}
+
+.highlight {
+  background-color: var(--highlight-color);
+}
+
+.hover-highlight:hover {
+  background-color: var(--background-color-heighten-2);
+}

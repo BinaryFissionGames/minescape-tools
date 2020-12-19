@@ -26,7 +26,8 @@ module.exports = {
           "btn-large",
           "waves-light",
           "teal",
-          "left"
+          "left",
+          "background-lighten-1"
         ]
       })
   ]

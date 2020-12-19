@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "materialize-css/sass/materialize.scss";
+import "./style/main.scss";
 import {
   MUTATION_LIGHT_BOX_SET_DRAGGING,
   MUTATION_LIGHT_BOX_UNSET_DRAGGING

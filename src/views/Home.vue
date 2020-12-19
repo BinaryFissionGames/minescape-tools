@@ -1,5 +1,5 @@
 <template>
-  <div class="home blue-grey darken-2">
+  <div class="content-container">
     <h1 class="home-header">Welcome to Minescape Tools!</h1>
     <p>
       This site holds a collection of utils I've created to help with various
@@ -25,12 +25,6 @@ import { Component, Vue } from "vue-property-decorator";
 export default class Home extends Vue {}
 </script>
 <style scoped>
-.home {
-  border-radius: 25px;
-  margin: 50px;
-  padding: 35px;
-}
-
 .home-header {
   margin-top: 25px;
   margin-bottom: 50px;

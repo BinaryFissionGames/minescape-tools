@@ -1,6 +1,6 @@
 <template>
-  <div id="app" class="blue-grey darken-1">
-    <div id="banner" class="indigo"><p>Minescape Tools</p></div>
+  <div id="app">
+    <div id="banner" class="highlight"><p>Minescape Tools</p></div>
     <ul id="slide-out" v-bind:class="slideoutClass">
       <li class="hover-highlight slideout-element">
         <router-link class="slide-out-indent-1" to="/">Home</router-link>
@@ -40,7 +40,7 @@
       @click="toggleSlideOut"
       class="slide-out-overlay"
     ></div>
-    <div class="content blue-grey darken-1">
+    <div class="content">
       <router-view />
     </div>
   </div>
@@ -58,7 +58,7 @@ export default class App extends Vue {
   }
 
   get slideoutClass() {
-    let cssClass = "dynamic-slide-out-transition blue-grey darken-3";
+    let cssClass = "dynamic-slide-out-transition background-lighten-1";
     if (this.slideOutOpen) {
       cssClass += " dynamic-slide-out-open";
     } else {
@@ -69,7 +69,7 @@ export default class App extends Vue {
 
   get slideoutButtonClass() {
     let cssClass =
-      "btn-floating btn-large waves-light teal left dynamic-slide-out-transition slide-out-button";
+      "btn-floating btn-large waves-light highlight left dynamic-slide-out-transition slide-out-button";
     if (this.slideOutOpen) {
       cssClass += " dynamic-slide-out-button-open";
     } else {
@@ -81,13 +81,6 @@ export default class App extends Vue {
 </script>
 
 <style>
-html,
-body {
-  min-height: 1vh;
-  min-width: 1vw;
-  background-color: #546e7a;
-}
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -180,16 +173,11 @@ body {
 }
 
 .slideout-element > a {
-  color: white;
   width: 100%;
   height: 100%;
   display: block;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-.hover-highlight:hover {
-  background-color: #455a64;
 }
 
 .slide-out-indent-1 {
@@ -201,11 +189,10 @@ body {
 }
 
 .router-link-exact-active {
-  background-color: #455a64;
+  background-color: var(--background-color-heighten-3);
 }
 
 .router-label {
-  color: white;
   font-size: 25px;
   font-weight: bold;
 }
@@ -215,9 +202,5 @@ body {
   left: 10px;
   top: 70px;
   z-index: 10000;
-}
-
-.link {
-  color: #26a69a;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <div id="anagram-outer">
-    <div class="anagram-element blue-grey darken-2">
+    <div class="content-container anagram-element">
       <AnagramSolver />
     </div>
-    <div class="anagram-element blue-grey darken-2">
+    <div class="content-container anagram-element">
       <CipherSolver />
     </div>
   </div>
@@ -26,8 +26,5 @@ export default class AnagramCipherSolver extends Vue {}
 .anagram-element {
   width: 450px;
   height: 300px;
-  padding: 15px 50px 15px 50px;
-  border-radius: 15px;
-  margin: 25px;
 }
 </style>

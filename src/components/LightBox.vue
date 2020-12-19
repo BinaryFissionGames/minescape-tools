@@ -1,6 +1,6 @@
 <template>
   <div class="full-display">
-    <div class="full-table-div blue-grey darken-2">
+    <div class="content-container">
       <table class="light-box-table" draggable="false">
         <tr
           v-for="row in 6"
@@ -45,10 +45,10 @@
         </button>
       </div>
     </div>
-    <div class="instruction-display blue-grey darken-2">
+    <div class="content-container">
       <p>{{ currentStepDisplayText }}</p>
     </div>
-    <div class="light-box-instructions blue-grey darken-2">
+    <div class="content-container">
       <h2 class="light-box-instructions-header">Instructions</h2>
       <p>
         To toggle a light, click on it. Click and drag to toggle multiple lights

@@ -41,6 +41,6 @@ export function getFilled3DArray(
     .map(() => getFilled2DArray(rows, cols, fill));
 }
 
-export function deepCopy(obj: object) {
+export function deepCopy<T>(obj: T): T {
   return JSON.parse(JSON.stringify(obj));
 }
