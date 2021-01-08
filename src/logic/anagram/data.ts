@@ -6,6 +6,7 @@ export type PersonOfInterest = {
     z: number;
   };
   locationDesc: string;
+  alternates?: string[]; // "Alternate" spellings (in case, for instance, a clue is not strictly an anagram, this can fix it)
 };
 
 export const PEOPLE_OF_INTEREST: PersonOfInterest[] = [
@@ -43,7 +44,8 @@ export const PEOPLE_OF_INTEREST: PersonOfInterest[] = [
       y: 69,
       z: 129
     },
-    locationDesc: "in the Church of Lumbridge"
+    locationDesc: "in the Church of Lumbridge",
+    alternates: ["Father Aereck c"]
   },
   {
     name: "Strange Old Man",

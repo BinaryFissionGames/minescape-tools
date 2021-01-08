@@ -172,12 +172,22 @@ describe("Anagram/Cipher solver", function() {
         {
           anagram: "Machete Clam",
           name: "Cam the Camel"
+        },
+        {
+          anagram: "area chef treck",
+          name: "Father Aereck"
         }
       ];
 
       for (const anagram of KNOWN_ANAGRAMS) {
+        const solution = solveAnagram(anagram.anagram);
+        if (!solution) {
+          assert.fail(
+            `Could not find solution for anagram ${anagram.anagram} (should be ${anagram.name})`
+          );
+        }
         assert.strictEqual(
-          solveAnagram(anagram.anagram)?.name.toLowerCase(),
+          solution.name.toLowerCase(),
           anagram.name.toLowerCase()
         );
       }
@@ -230,8 +240,14 @@ describe("Anagram/Cipher solver", function() {
       ];
 
       for (const cipher of TEST_CIPHERS) {
+        const solution = solveCipher(cipher.cipher);
+        if (!solution) {
+          assert.fail(
+            `Could not find solution for cipher ${cipher.cipher} (should be ${cipher.name})`
+          );
+        }
         assert.strictEqual(
-          solveCipher(cipher.cipher)?.name.toLowerCase(),
+          solution.name.toLowerCase(),
           cipher.name.toLowerCase()
         );
       }

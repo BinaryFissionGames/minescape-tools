@@ -27,10 +27,18 @@ export function solveAnagram(anagramText: string): PersonOfInterest | null {
   anagramText = transformTextForAnagram(anagramText);
   const mainTextLetterMap = createLetterMap(anagramText);
   for (const poi of PEOPLE_OF_INTEREST) {
-    const nameText = transformTextForAnagram(poi.name);
-    const nameTextMap = createLetterMap(nameText);
-    if (mapsAreEqual(mainTextLetterMap, nameTextMap)) {
-      return poi;
+    let allPossibleSpellings: string[] = [];
+    allPossibleSpellings.push(poi.name);
+    if (poi.alternates) {
+      allPossibleSpellings = allPossibleSpellings.concat(poi.alternates);
+    }
+
+    for (const name of allPossibleSpellings) {
+      const nameText = transformTextForAnagram(name);
+      const nameTextMap = createLetterMap(nameText);
+      if (mapsAreEqual(mainTextLetterMap, nameTextMap)) {
+        return poi;
+      }
     }
   }
 
