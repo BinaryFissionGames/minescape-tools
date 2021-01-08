@@ -4,6 +4,8 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
+export const LIGHTBOX_ROUTE = "/lightboxsolver";
+
 const routes: Array<RouteConfig> = [
   {
     path: "/",
@@ -11,7 +13,7 @@ const routes: Array<RouteConfig> = [
     component: Home
   },
   {
-    path: "/lightboxsolver",
+    path: LIGHTBOX_ROUTE,
     name: "Light Box Solver",
     component: () =>
       import(/* webpackChunkName: "lightbox" */ "../views/LightBoxSolver.vue")
@@ -22,6 +24,14 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(
         /* webpackChunkName: "anagram" */ "../views/AnagramCipherSolver.vue"
+      )
+  },
+  {
+    path: "/skillcalcs",
+    name: "Skill Calculators",
+    component: () =>
+      import(
+        /* webpackChunkName: "skillcalcs" */ "../views/SkillCalculators.vue"
       )
   }
 ];

@@ -1,6 +1,6 @@
 <template>
   <div class="full-display">
-    <div class="content-container">
+    <ContentCard>
       <table class="light-box-table" draggable="false">
         <tr
           v-for="row in 6"
@@ -44,11 +44,11 @@
           {{ nextStepButtonText }}
         </button>
       </div>
-    </div>
-    <div class="content-container">
+    </ContentCard>
+    <ContentCard>
       <p>{{ currentStepDisplayText }}</p>
-    </div>
-    <div class="content-container">
+    </ContentCard>
+    <ContentCard>
       <h2 class="light-box-instructions-header">Instructions</h2>
       <p>
         To toggle a light, click on it. Click and drag to toggle multiple lights
@@ -71,7 +71,7 @@
         If you reach the end and the puzzle cannot be solved, you may use the
         "Verify" button to recheck and reenter states from previous steps.
       </p>
-    </div>
+    </ContentCard>
   </div>
 </template>
 
@@ -87,9 +87,10 @@ import {
 } from "@/store/mutations";
 import { STEP_INFO } from "@/logic/lightbox/state_info";
 import { LightBoxStep } from "@/types/state";
+import ContentCard from "@/components/structure/ContentCard.vue";
 
 @Component({
-  components: { LightBoxLight }
+  components: { LightBoxLight, ContentCard }
 })
 export default class LightBox extends Vue {
   get currentStepDisplayText() {

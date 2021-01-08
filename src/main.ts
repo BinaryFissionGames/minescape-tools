@@ -1,6 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
+import router, { LIGHTBOX_ROUTE } from "./router";
 import store from "./store";
 import "materialize-css/sass/materialize.scss";
 import "./style/main.scss";
@@ -8,7 +8,7 @@ import {
   MUTATION_LIGHT_BOX_SET_DRAGGING,
   MUTATION_LIGHT_BOX_UNSET_DRAGGING
 } from "@/store/mutations";
-import { processKeyEvent } from "@/logic/lightbox/keyboard";
+import { processLightBoxKeyEvent } from "@/logic/lightbox/keyboard";
 
 Vue.config.productionTip = false;
 
@@ -31,5 +31,7 @@ document.addEventListener("mouseup", e => {
 });
 
 document.addEventListener("keydown", e => {
-  processKeyEvent(e);
+  if (router.currentRoute.fullPath === LIGHTBOX_ROUTE) {
+    processLightBoxKeyEvent(e);
+  }
 });

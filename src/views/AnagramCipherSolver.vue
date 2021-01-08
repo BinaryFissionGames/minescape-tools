@@ -1,19 +1,20 @@
 <template>
   <div id="anagram-outer">
-    <div class="content-container anagram-element">
+    <ContentCard class="anagram-element">
       <AnagramSolver />
-    </div>
-    <div class="content-container anagram-element">
+    </ContentCard>
+    <ContentCard class="anagram-element">
       <CipherSolver />
-    </div>
+    </ContentCard>
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import AnagramSolver from "@/components/AnagramSolver.vue";
 import CipherSolver from "@/components/CipherSolver.vue";
+import ContentCard from "@/components/structure/ContentCard.vue";
 @Component({
-  components: { AnagramSolver, CipherSolver }
+  components: { AnagramSolver, CipherSolver, ContentCard }
 })
 export default class AnagramCipherSolver extends Vue {}
 </script>

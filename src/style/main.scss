@@ -55,6 +55,17 @@ span {
   border-style: solid;
 }
 
+.content-container-within {
+  border-radius: 25px;
+  margin: 25px;
+  padding: 20px;
+  background-color: var(--background-color-heighten-2);
+  box-shadow: 2px 2px 2px 1px var(--shadow-color);
+  border-color: var(--border-color);
+  border-width: 1px;
+  border-style: solid;
+}
+
 .link {
   color: #26a69a;
 }

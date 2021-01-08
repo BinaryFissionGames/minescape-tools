@@ -23,6 +23,11 @@
         </ul>
       </li>
       <li class="hover-highlight slideout-element">
+        <router-link class="slide-out-indent-1" to="/skillcalcs"
+          >Skill Calculators</router-link
+        >
+      </li>
+      <li class="hover-highlight slideout-element">
         <a class="slide-out-indent-1" href="https://minescape.net"
           >Minescape.net</a
         >

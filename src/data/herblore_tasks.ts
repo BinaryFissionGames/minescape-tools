@@ -6,7 +6,7 @@ function herbloreTimeCostFunction(_level: number): number {
   return 1;
 }
 
-export const potions: Task[] = [
+export const HERBLORE_TASKS: Task[] = [
   {
     name: "Talupia Blancus",
     experience: 2,

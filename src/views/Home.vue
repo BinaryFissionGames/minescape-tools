@@ -1,5 +1,5 @@
 <template>
-  <div class="content-container">
+  <ContentCard>
     <h1 class="home-header">Welcome to Minescape Tools!</h1>
     <p>
       This site holds a collection of utils I've created to help with various
@@ -16,12 +16,14 @@
       If you find any issues or have any suggestions, please feel free to
       contact me on Discord (BinaryFissionGames#6410).
     </p>
-  </div>
+  </ContentCard>
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-
-@Component
+import ContentCard from "@/components/structure/ContentCard.vue";
+@Component({
+  components: { ContentCard }
+})
 export default class Home extends Vue {}
 </script>
 <style scoped>

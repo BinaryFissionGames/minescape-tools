@@ -26,6 +26,10 @@ export class TreeNode<T> {
     }
     return 1 + this.parentNode.depth();
   }
+
+  leaf(): boolean {
+    return this.childNodes.length <= 0;
+  }
 }
 
 type VisitFunction<T> = (node: TreeNode<T>) => void;

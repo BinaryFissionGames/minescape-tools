@@ -1,4 +1,4 @@
-import { Resource, Task } from "@/logic/solver/types";
+import { Resource, SkillCalculatorTask, Task } from "@/logic/solver/types";
 import { Tree } from "@/logic/util/Tree";
 import { deepCopy } from "@/logic/util/arrays";
 
@@ -6,6 +6,41 @@ export type TaskAmount = {
   task: Task | Resource;
   times: number;
 };
+
+export type TaskTreeInfo = {
+  treeInfo: {
+    iterations: number; // Times this needs to be done to satisfy the parent node for a single iteration (root node always has 1 for the tree)
+  };
+};
+
+export function getTaskTree(
+  task: SkillCalculatorTask,
+  allTasks: SkillCalculatorTask[]
+): Tree<SkillCalculatorTask | Resource> {
+  const tree = new Tree<SkillCalculatorTask | Resource>();
+  tree.createRoot(task);
+
+  for (const resourceNeeded of task.resourcesNeeded) {
+    const generatingTask = allTasks.find(
+      val => val.name === resourceNeeded.name
+    );
+    if (!generatingTask) {
+      tree.rootNode!.addChildData(resourceNeeded);
+    } else {
+      tree.rootNode!.addChildNode(
+        getTaskTree(generatingTask, allTasks).rootNode
+      );
+    }
+  }
+
+  return tree;
+}
+
+export function isResource(
+  obj: SkillCalculatorTask | Resource
+): obj is Resource {
+  return (obj as Resource).quantity !== undefined;
+}
 
 export function getTotalsTree(
   resource: Resource,

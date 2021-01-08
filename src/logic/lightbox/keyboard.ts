@@ -28,7 +28,7 @@ const KEYS_ACTION_ENTER_ENTRY_MODE = [
 
 const KEYS_ACTION_EXIT_ENTRY_MODE = ["End", "Delete"];
 
-export function processKeyEvent(e: KeyboardEvent) {
+export function processLightBoxKeyEvent(e: KeyboardEvent) {
   if (store.state.lightBoxState.keyboardEntryInfo.inEntryMode) {
     if (KEYS_ACTION_EXIT_ENTRY_MODE.includes(e.key)) {
       store.commit(MUTATION_LIGHT_BOX_EXIT_KEYBOARD_ENTRY_MODE);
