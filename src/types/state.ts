@@ -31,6 +31,35 @@ export type LightBoxState = {
   keyboardEntryInfo: KeyboardEntryInfo;
 };
 
+export enum ColorMode {
+  SystemDefault,
+  Light,
+  Dark
+}
+
+export const ColorModeString = {
+  [ColorMode.SystemDefault]: "SystemDefault",
+  [ColorMode.Dark]: "Dark",
+  [ColorMode.Light]: "Light"
+};
+
+export const ColorModeStringToMode: { [key: string]: ColorMode } = {
+  SystemDefault: ColorMode.SystemDefault,
+  Dark: ColorMode.Dark,
+  Light: ColorMode.Light
+};
+
+export const ColorModeReadableString = {
+  [ColorMode.SystemDefault]: "System Default",
+  [ColorMode.Dark]: "Dark",
+  [ColorMode.Light]: "Light"
+};
+
+export type PersistentState = {
+  colorMode: ColorMode;
+};
+
 export type VuexState = {
   lightBoxState: LightBoxState;
+  persistentState: PersistentState;
 };

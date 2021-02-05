@@ -1,5 +1,5 @@
 /*
-* Light theme
+* Light theme (default style; these will be changed by JS code when the page loads)
 */
 :root {
   --shadow-color: #5f5f5f;
@@ -10,22 +10,6 @@
   --background-color-heighten-3: #cfcfcf;
   --highlight-color: #26a69a;
   --text-color: #000000;
-}
-
-/*
-* Dark theme
-*/
-@media (prefers-color-scheme: dark){
-  :root {
-    --shadow-color: #1c1c1c;
-    --border-color: #1c1c1c;
-    --background-color: #1c1c1c;
-    --background-color-heighten-1: #2d2d2d;
-    --background-color-heighten-2: #3a3a3a;
-    --background-color-heighten-3: #4a4a4a;
-    --highlight-color: #00796b;
-    --text-color: #bfbfbf;
-  }
 }
 
 /*

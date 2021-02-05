@@ -15,3 +15,4 @@ export const MUTATION_LIGHT_BOX_EXIT_KEYBOARD_ENTRY_MODE =
 export const MUTATION_LIGHT_BOX_KEYBOARD_NEXT_ROW = "lightboxentrynext";
 export const MUTATION_LIGHT_BOX_KEYBOARD_PREV_ROW = "lightboxentryprev";
 export const MUTATION_LIGHT_BOX_KEYBOARD_TOGGLE_LIGHT = "lightboxentrytoggle";
+export const MUTATION_SET_COLOR_SCHEME = "setcolorscheme";

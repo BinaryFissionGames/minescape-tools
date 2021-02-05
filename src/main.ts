@@ -9,6 +9,10 @@ import {
   MUTATION_LIGHT_BOX_UNSET_DRAGGING
 } from "@/store/mutations";
 import { processLightBoxKeyEvent } from "@/logic/lightbox/keyboard";
+import {
+  setCssVariablesForColorMode,
+  setupSystemDefaultColorModeEvent
+} from "@/style/css_vars";
 
 Vue.config.productionTip = false;
 
@@ -35,3 +39,7 @@ document.addEventListener("keydown", e => {
     processLightBoxKeyEvent(e);
   }
 });
+
+//Setup styles.
+setupSystemDefaultColorModeEvent();
+setCssVariablesForColorMode(store.state.persistentState.colorMode);

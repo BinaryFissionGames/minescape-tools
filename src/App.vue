@@ -2,6 +2,11 @@
   <div id="app">
     <div id="banner" class="highlight"><p>Minescape Tools</p></div>
     <ul id="slide-out" v-bind:class="slideoutClass">
+      <li class="slideout-element bottom-sep">
+        <h4 style="text-align: center">Color Scheme</h4>
+        <NWaySwitch :elements="colorModeSelectOptions" v-model="colorScheme" />
+        <span class="sep-bar" />
+      </li>
       <li class="hover-highlight slideout-element">
         <router-link class="slide-out-indent-1" to="/">Home</router-link>
       </li>
@@ -53,11 +58,25 @@
 
 <script lang="ts">
 import Component from "vue-class-component";
-import { Vue } from "vue-property-decorator";
-
-@Component
+import { Vue, Watch } from "vue-property-decorator";
+import NWaySwitch from "@/components/inputs/NWaySwitch.vue";
+import { NWaySwitchOption } from "@/types/switch";
+import {
+  ColorMode,
+  ColorModeReadableString,
+  ColorModeString,
+  ColorModeStringToMode
+} from "@/types/state";
+import { MUTATION_SET_COLOR_SCHEME } from "@/store/mutations";
+@Component({
+  components: { NWaySwitch }
+})
 export default class App extends Vue {
   slideOutOpen = false;
+  colorScheme: string = ColorModeString[
+    this.$store.state.persistentState.colorMode as ColorMode
+  ] as string;
+
   toggleSlideOut() {
     this.slideOutOpen = !this.slideOutOpen;
   }
@@ -81,6 +100,31 @@ export default class App extends Vue {
       cssClass += " dynamic-slide-out-button-closed";
     }
     return cssClass;
+  }
+
+  get colorModeSelectOptions(): NWaySwitchOption[] {
+    return [
+      {
+        optionId: ColorModeString[ColorMode.SystemDefault],
+        optionName: ColorModeReadableString[ColorMode.SystemDefault]
+      },
+      {
+        optionId: ColorModeString[ColorMode.Light],
+        optionName: ColorModeReadableString[ColorMode.Light]
+      },
+      {
+        optionId: ColorModeString[ColorMode.Dark],
+        optionName: ColorModeReadableString[ColorMode.Dark]
+      }
+    ];
+  }
+
+  @Watch("colorScheme")
+  onColorSchemeChanged() {
+    this.$store.commit(
+      MUTATION_SET_COLOR_SCHEME,
+      ColorModeStringToMode[this.colorScheme]
+    );
   }
 }
 </script>
@@ -191,6 +235,17 @@ export default class App extends Vue {
 
 .slide-out-indent-2 {
   padding-left: 40px !important;
+}
+.bottom-sep {
+  margin-bottom: 5px;
+}
+
+.sep-bar {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--background-color-heighten-2);
 }
 
 .router-link-exact-active {

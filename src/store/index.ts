@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { LightBoxStep, VuexState } from "@/types/state";
+import { ColorMode, LightBoxStep, VuexState } from "@/types/state";
 import { LightId } from "@/logic/lightbox/types";
 import { nextStep, prevStep } from "@/logic/lightbox/state_transition";
 import {
@@ -16,11 +16,17 @@ import {
   MUTATION_LIGHT_BOX_SET_DRAGGING,
   MUTATION_LIGHT_BOX_UNSET_DRAGGING,
   MUTATION_RESET_LIGHT_BOX,
+  MUTATION_SET_COLOR_SCHEME,
   MUTATION_TURN_OFF_LIGHT,
   MUTATION_TURN_ON_LIGHT
 } from "@/store/mutations";
 import { getFilled2DArray, getFilled3DArray } from "@/logic/util/arrays";
 import { STEP_INFO } from "@/logic/lightbox/state_info";
+import {
+  loadPersistentState,
+  storePersistentState
+} from "@/store/persistent_state";
+import { setCssVariablesForColorMode } from "@/style/css_vars";
 
 Vue.use(Vuex);
 
@@ -36,7 +42,8 @@ const initialState: VuexState = {
       inEntryMode: false,
       curRow: 0
     }
-  }
+  },
+  persistentState: loadPersistentState()
 };
 
 const store = new Vuex.Store({
@@ -140,6 +147,24 @@ const store = new Vuex.Store({
           });
         }
       }
+    },
+    [MUTATION_SET_COLOR_SCHEME](state: VuexState, scheme: any) {
+      if (typeof scheme !== "number") {
+        throw new Error("Cannot set color scheme to: " + scheme);
+      }
+
+      if (
+        scheme !== ColorMode.SystemDefault &&
+        scheme !== ColorMode.Light &&
+        scheme !== ColorMode.Dark
+      ) {
+        throw new Error("Cannot set color scheme to: " + scheme);
+      }
+
+      state.persistentState.colorMode = scheme as ColorMode;
+
+      setCssVariablesForColorMode(scheme as ColorMode);
+      storePersistentState(state.persistentState);
     }
   },
   actions: {},
