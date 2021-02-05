@@ -1,5 +1,7 @@
 <template>
-  <LightBox />
+  <div class="fullScreened">
+    <LightBox />
+  </div>
 </template>
 <script>
 import { Component, Vue } from "vue-property-decorator";

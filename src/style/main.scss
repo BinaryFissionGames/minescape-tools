@@ -28,6 +28,9 @@
   }
 }
 
+/*
+* General styles (non-general styles are included in the individual .vue files)
+*/
 html,
 body {
   min-height: 1vh;
@@ -80,4 +83,33 @@ span {
 
 .hover-highlight:hover {
   background-color: var(--background-color-heighten-2);
+}
+
+.fullScreened {
+  width: 100%;
+}
+
+/*
+* Mobile styling
+*/
+
+@media (max-width: 780px) {
+  h1 {
+    font-size: 35px;
+  }
+  
+  p {
+    font-size: 12px
+  }
+
+  .content-container {
+    border-radius: 25px;
+    margin: 10px;
+    padding: 20px;
+    background-color: var(--background-color-heighten-1);
+    box-shadow: 2px 2px 2px 1px var(--shadow-color);
+    border-color: var(--border-color);
+    border-width: 1px;
+    border-style: solid;
+  }
 }

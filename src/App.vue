@@ -131,8 +131,8 @@ export default class App extends Vue {
   position: absolute;
   top: 60px;
   padding: 15px;
-  width: 100%;
   height: calc(100% - 60px);
+  min-width: 100%;
 }
 
 #banner {

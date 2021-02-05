@@ -45,7 +45,7 @@
         </button>
       </div>
     </ContentCard>
-    <ContentCard>
+    <ContentCard class="instruction-display">
       <p>{{ currentStepDisplayText }}</p>
     </ContentCard>
     <ContentCard>
@@ -170,15 +170,17 @@ export default class LightBox extends Vue {
 
 .light-box-table > tr > td {
   text-align: center;
+  padding-bottom: 0px;
 }
 
 .light-box-table {
-  width: 300px;
+  width: 200px;
   margin: auto;
   collapse: none;
   border-collapse: separate;
+  touch-action: manipulation;
 }
-@media (min-width: 700px) {
+@media (min-width: 780px) {
   .light-box-table {
     width: 600px;
     margin: auto;
