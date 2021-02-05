@@ -1,4 +1,10 @@
-# minescape-skill-calculators
+# Minescape Tools
+
+Unofficial website containing tools for [Minescape.net](Minescape.net) from GamesLabs.
+
+Disclaimer: This project is completely unaffiliated with GamesLabs.
+
+The website is accessible at [minescape.binaryfissiongames.com](minescape.binaryfissiongames.com).
 
 ## Project setup
 ```

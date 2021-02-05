@@ -9,13 +9,29 @@
       >.
     </p>
     <p>
-      In the future, I hope to add some skill calculators, as well as other
-      useful tools.
-    </p>
-    <p>
       If you find any issues or have any suggestions, please feel free to
       contact me on Discord (BinaryFissionGames#6410).
     </p>
+    <br />
+    <br />
+    <div>
+      <h2>Changelog:</h2>
+      <p>05/02/2021</p>
+      <ul class="changelog-list">
+        <li>
+          Added color scheme options (and ditched old cruddy color scheme)
+        </li>
+        <li>Initial skill calculator prototype (WIP)</li>
+        <li>
+          Open sourced code ( see the
+          <a
+            class="link"
+            href="https://github.com/BinaryFissionGames/minescape-tools"
+            >GitHub repo here</a
+          >!)
+        </li>
+      </ul>
+    </div>
   </ContentCard>
 </template>
 <script lang="ts">
@@ -30,5 +46,11 @@ export default class Home extends Vue {}
 .home-header {
   margin-top: 25px;
   margin-bottom: 50px;
+}
+
+.changelog-list > li {
+  list-style-type: disc;
+  margin-left: 50px;
+  text-align: left;
 }
 </style>
