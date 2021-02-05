@@ -27,7 +27,12 @@ module.exports = {
           "waves-light",
           "teal",
           "left",
-          "background-lighten-1"
+          "background-lighten-1",
+          "select-wrapper",
+          "select-dropdown",
+          "dropdown-trigger",
+          "dropdown-content",
+          "caret"
         ]
       })
   ]
